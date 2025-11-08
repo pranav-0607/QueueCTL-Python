@@ -20,8 +20,8 @@ def decode_command(command, queue):
             max_retries = queue.max_retries
             
             job = Jobs(
-                id=job_data["id"],
-                command=job_data["command"],
+                    id=queue.get_next_job_id(),                command=job_data["command"],
+                                    command=job_data["command"] + " " + " ".join(job_data.get("args", [])),
                 state=State.PENDING,
                 attempts=0,
                 max_retries=max_retries,
