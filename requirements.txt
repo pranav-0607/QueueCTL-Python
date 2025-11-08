@@ -1,0 +1,12 @@
+# QueueCTL Python Dependencies
+# Standard library modules are used (no external dependencies required)
+# Python 3.7+ is recommended
+
+# All required modules are part of Python standard library:
+# - enum (for State enum)
+# - collections (for deque)
+# - threading (for Lock, Thread)
+# - subprocess (for running shell commands)
+# - datetime (for timestamps)
+# - json (for JSON parsing)
+# - sys (for I/O operations)
