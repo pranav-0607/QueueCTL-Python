@@ -46,9 +46,16 @@ class Queue:
         self.max_retries = 3
         self.stop = False
         self.lock = Lock()
+                self.next_job_id = 1
 
     def update_max_retries(self, max_retries):
         self.max_retries = max_retries
+
+        def get_next_job_id(self):
+        with self.lock:
+            job_id = self.next_job_id
+            self.next_job_id += 1
+            return job_id
 
     def enqueue(self, job):
         with self.lock:
